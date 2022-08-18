@@ -1,0 +1,42 @@
+.wrapper {
+  height: 80px;
+  background-color: #0c2738;
+  color: #899ead;
+}
+
+// Navigation
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0 1.6rem;
+  border-bottom-width: 2px;
+  border-color: transparent;
+  transition: color 0.2s, border 0.2s;
+
+  &.active {
+    border-color: #f1b722;
+    color: #fff;
+  }
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+// Action button
+.action-btn {
+  padding: 1.2rem 3.2rem;
+  border-radius: 0.4rem;
+  border: 1px solid transparent;
+  transition: color 0.2s;
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+.bars-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  color: #899ead;
+}
