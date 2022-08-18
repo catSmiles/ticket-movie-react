@@ -2,6 +2,8 @@
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
+
+import { NavLink } from 'react-router-dom';
 console.log(images);
 
 const cx = classNames.bind(styles);
@@ -12,42 +14,26 @@ function Header(props) {
     <header className={cx('wrapper')}>
       <div className="container max-w-screen-xl mx-auto flex justify-between items-center h-full">
         {/* Logo */}
-        <a
-          rel="noopener noreferrer"
-          href="#"
-          aria-label="Back to homepage"
-          // className="flex items-center p-2"
-          className="p-2"
-        >
+        <NavLink to="/" aria-label="Back to homepage" className="p-2">
           <img src={images.logo} alt="cyberlean" />
-        </a>
+        </NavLink>
         {/* Navs */}
         <ul className="items-stretch hidden space-x-3 lg:flex h-full">
-          <li className="flex">
-            <a rel="noopener noreferrer" href="#" className={cx('nav-link', 'active')}>
+          <li className={cx('nav-item')}>
+            <NavLink to="/" exact activeClassName={cx('current')}>
               Home
-            </a>
+            </NavLink>
           </li>
-          <li className="flex">
-            <a rel="noopener noreferrer" href="#" className={cx('nav-link')}>
+          <li className={cx('nav-item')}>
+            <NavLink to="/contact" activeClassName={cx('current')}>
               Contact
-            </a>
+            </NavLink>
           </li>
-          <li className="flex">
-            <a rel="noopener noreferrer" href="#" className={cx('nav-link')}>
+          <li className={cx('nav-item')}>
+            <NavLink to="/news" activeClassName={cx('current')}>
               News
-            </a>
+            </NavLink>
           </li>
-          {/* css origin */}
-          {/* <li className="flex">
-            <a
-              rel="noopener noreferrer"
-              href="#"
-              className="flex items-center px-4 -mb-1 border-b-2 border-transparent"
-            >
-              Link
-            </a>
-          </li> */}
         </ul>
         {/* Action */}
         <div className="items-center flex-shrink-0 hidden lg:flex">

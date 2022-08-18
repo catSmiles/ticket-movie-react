@@ -10,13 +10,15 @@ function HomeTemplate({ Component, ...restProps }) {
   return (
     <Route
       {...restProps}
-      render={(propsRoute) => (
-        <>
-          <Header {...propsRoute} />
-          <Component {...propsRoute} />
-          <Footer {...propsRoute} />
-        </>
-      )}
+      render={(propsRoute) => {
+        return (
+          <>
+            <Header {...propsRoute} />
+            <Component {...propsRoute} />
+            <Footer {...propsRoute} />
+          </>
+        );
+      }}
     />
   );
 }

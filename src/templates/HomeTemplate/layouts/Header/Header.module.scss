@@ -5,22 +5,28 @@
 }
 
 // Navigation
-.nav-link {
+.nav-item {
   display: flex;
   align-items: center;
   padding: 0 1.6rem;
-  border-bottom-width: 2px;
-  border-color: transparent;
-  transition: color 0.2s, border 0.2s;
+}
 
-  &.active {
-    border-color: #f1b722;
-    color: #fff;
-  }
+.nav-item > a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  border-bottom-width: 2px;
+  border-bottom-color: transparent;
+  transition: border 0.2s, color 0.2s;
 
   &:hover {
     color: #fff;
   }
+}
+
+.nav-item > .current {
+  border-color: #f1b722;
+  color: #fff;
 }
 
 // Action button
