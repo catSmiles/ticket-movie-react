@@ -9,6 +9,8 @@ console.log(images);
 const cx = classNames.bind(styles);
 
 function Header(props) {
+  let isUser = true;
+  isUser = false;
   console.log('Header props: ', props);
   return (
     <header className={cx('wrapper')}>
@@ -36,10 +38,14 @@ function Header(props) {
           </li>
         </ul>
         {/* Action */}
-        <div className="items-center flex-shrink-0 hidden lg:flex">
+        <div className={cx('hidden', 'lg:flex', 'group-action')}>
           {/* css origin */}
           {/* <button className="self-center px-8 py-3 rounded">Sign in</button> */}
-          <button className={cx('action-btn')}>Đăng nhập</button>
+          {isUser ? (
+            <span className={cx('user')}>Nguyen Hoang Minh Mang</span>
+          ) : (
+            <button className={cx('action-btn')}>Đăng nhập</button>
+          )}
         </div>
         <button className="p-4 lg:hidden">
           <svg
