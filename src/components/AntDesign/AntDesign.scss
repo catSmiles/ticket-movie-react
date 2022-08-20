@@ -1,0 +1,48 @@
+// antd
+@import 'antd/dist/antd.css';
+
+// CUSTOM CLASS ANTD
+
+.custom-class-antd.ant-tabs {
+  font-family: var(--ff-main);
+  font-size: 0.9375rem; // 15px
+  color: rgb(31 41 55);
+}
+
+.custom-class-antd .ant-tabs-tab {
+  &:hover {
+    color: #f1b722;
+  }
+}
+
+.custom-class-antd.ant-tabs-left > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab {
+}
+
+.custom-class-antd .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #f1b722;
+}
+
+.custom-class-antd .ant-tabs-ink-bar {
+  background-color: #f1b722;
+}
+
+// CHANGE STYLES ANTD
+.change-style-antd > .ant-tabs-nav .ant-tabs-tab {
+  padding: 0;
+}
+
+.change-style-antd > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab {
+  margin: 0;
+}
+
+// .ant-tabs-tab-btn {
+//   // border: 1px solid #000;
+// }
+
+// .ant-tabs-tab {
+//   font-size: 0.9375rem; // ------- font-size 15px se sinh ra 1 feature bat ngo trong antD --------------
+
+//   &:hover {
+//     color: #f1b722;
+//   }
+// }
