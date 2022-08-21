@@ -35,6 +35,23 @@
   margin: 0;
 }
 
+// new 21-8-2022
+.custom-class-antd .ant-tabs-nav-list {
+  height: 500px;
+  overflow-y: auto;
+}
+.change-style-antd .ant-tabs-content {
+  height: 500px;
+  overflow-y: auto;
+}
+
+.custom-class-antd > .ant-tabs-nav .ant-tabs-nav-operations {
+  display: none;
+}
+.change-style-antd > .ant-tabs-nav .ant-tabs-nav-operations {
+  display: none;
+}
+
 // .ant-tabs-tab-btn {
 //   // border: 1px solid #000;
 // }

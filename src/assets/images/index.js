@@ -6,6 +6,7 @@ const images = {
   film: require('~/assets/images/banner/film.jpg'),
   layout38: require('~/assets/images/banner/layout-38x38.svg').default,
   layout32: require('~/assets/images/banner/layout-32x32.svg').default,
+  layout120x180: require('~/assets/images/banner/layout-120x180.svg').default,
   cgvIcon: require('~/assets/images/banner/cgv.jpg'),
 };
 
