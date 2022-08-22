@@ -44,7 +44,10 @@ function Header(props) {
           {isUser ? (
             <span className={cx('user')}>Nguyen Hoang Minh Mang</span>
           ) : (
-            <button className={cx('action-btn')}>Đăng nhập</button>
+            // <button className={cx('action-btn')}>Đăng nhập</button>
+            <NavLink to="/login" className={cx('action-btn')}>
+              Đăng nhập
+            </NavLink>
           )}
         </div>
         <button className="p-4 lg:hidden">

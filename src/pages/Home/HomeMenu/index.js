@@ -682,181 +682,193 @@ function HomeMenu() {
   );
 
   return (
-    <section className="container max-w-screen-xl mx-auto bg-white mb-20">
-      <p className="text-center text-white" style={{ backgroundColor: ' #081b27' }}>
-        Lich chieu phim
-      </p>
-      {/* tabs component */}
-      {/* <Tabs tabPosition={tabPosition} className={cx('custom-class-antd', 'cinema-list-height')}> */}
-      <Tabs tabPosition={tabPosition} className="custom-class-antd">
-        {/* Cinema Beta */}
-        <TabPane tab={logoBetaCinemaIcon} key="1">
-          <Tabs tabPosition={tabPosition} className="change-style-antd">
-            <TabPane tab={infoBetaCinema} key="1.1">
-              {infoFilm}
-              {infoFilm}
-              {infoFilm}
-              {infoFilm}
-            </TabPane>
-            <TabPane tab={infoBetaCinema} key="1.2">
-              {infoFilm}
-            </TabPane>
-            <TabPane tab={infoBetaCinema} key="1.3">
-              {infoFilm}
-            </TabPane>
-            <TabPane tab={infoBetaCinema} key="1.4">
-              {infoFilm}
-            </TabPane>
-            <TabPane tab={infoBetaCinema} key="1.5">
-              {infoFilm}
-            </TabPane>
-            <TabPane tab={infoBetaCinema} key="1.6">
-              {infoFilm}
-            </TabPane>
-            <TabPane tab={infoBetaCinema} key="1.7">
-              {infoFilm}
-            </TabPane>
-            <TabPane tab={infoBetaCinema} key="1.8">
-              {infoFilm}
-            </TabPane>
-            <TabPane tab={infoBetaCinema} key="1.9">
-              {infoFilm}
-            </TabPane>
-            <TabPane tab={infoBetaCinema} key="1.10">
-              {infoFilm}
-            </TabPane>
-            <TabPane tab={infoBetaCinema} key="1.11">
-              {infoFilm}
-            </TabPane>
-          </Tabs>
-        </TabPane>
+    <section className="bg-white py-8 md:py-10 lg:py-14">
+      <div className="container max-w-screen-xl mx-auto bg-white mb-20">
+        <h2 className="text-2xl font-bold lg:text-3xl text-black text-center mb-12">Lịch chiếu phim</h2>
+        {/* tabs component */}
+        {/* <Tabs tabPosition={tabPosition} className={cx('custom-class-antd', 'cinema-list-height')}> */}
+        <Tabs
+          tabPosition={tabPosition}
+          // className="custom-class-antd md:shadow-soju1 rounded-lg border-gray-200  bg-white md:overflow-hidden md:border"
+          className={cx(
+            'custom-class-antd',
+            'shadow-soju1',
+            'rounded-lg',
+            'border-gray-200',
+            'bg-white',
+            'md:overflow-hidden md:border',
+          )}
+          // style={{ border: '1px solid #000', padding: '1rem' }}
+        >
+          {/* Cinema Beta */}
+          <TabPane tab={logoBetaCinemaIcon} key="1">
+            <Tabs tabPosition={tabPosition} className="change-style-antd">
+              <TabPane tab={infoBetaCinema} key="1.1">
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBetaCinema} key="1.2">
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBetaCinema} key="1.3">
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBetaCinema} key="1.4">
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBetaCinema} key="1.5">
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBetaCinema} key="1.6">
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBetaCinema} key="1.7">
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBetaCinema} key="1.8">
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBetaCinema} key="1.9">
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBetaCinema} key="1.10">
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBetaCinema} key="1.11">
+                {infoFilm}
+              </TabPane>
+            </Tabs>
+          </TabPane>
 
-        {/* Cinema Galaxy */}
-        <TabPane tab={logoGalaxyCinemaIcon} key="2">
-          <Tabs tabPosition={tabPosition} className="change-style-antd">
-            <TabPane tab={infoGalaxyCinema} key="2.1">
-              {infoFilm}
-            </TabPane>
-            <TabPane tab={infoGalaxyCinema} key="2.2">
-              {infoFilm}
-              {infoFilm}
-            </TabPane>
-          </Tabs>
-        </TabPane>
+          {/* Cinema Galaxy */}
+          <TabPane tab={logoGalaxyCinemaIcon} key="2">
+            <Tabs tabPosition={tabPosition} className="change-style-antd">
+              <TabPane tab={infoGalaxyCinema} key="2.1">
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoGalaxyCinema} key="2.2">
+                {infoFilm}
+                {infoFilm}
+              </TabPane>
+            </Tabs>
+          </TabPane>
 
-        {/* Cinema BHD */}
-        <TabPane tab={logoBHDCinemaIcon} key="3">
-          <Tabs tabPosition={tabPosition} className="change-style-antd">
-            <TabPane tab={infoBHDCinema} key="3.1">
-              {infoFilm}
-              {infoFilm}
-              {infoFilm}
-            </TabPane>
-            <TabPane tab={infoBHDCinema} key="3.2">
-              {infoFilm}
-              {infoFilm}
-              {infoFilm}
-              {infoFilm}
-            </TabPane>
-          </Tabs>
-        </TabPane>
+          {/* Cinema BHD */}
+          <TabPane tab={logoBHDCinemaIcon} key="3">
+            <Tabs tabPosition={tabPosition} className="change-style-antd">
+              <TabPane tab={infoBHDCinema} key="3.1">
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBHDCinema} key="3.2">
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+              </TabPane>
+            </Tabs>
+          </TabPane>
 
-        <TabPane tab={logoBHDCinemaIcon} key="4">
-          <Tabs tabPosition={tabPosition} className="change-style-antd">
-            <TabPane tab={infoBHDCinema} key="4.1">
-              {infoFilm}
-              {infoFilm}
-              {infoFilm}
-            </TabPane>
-            <TabPane tab={infoBHDCinema} key="4.2">
-              {infoFilm}
-              {infoFilm}
-              {infoFilm}
-              {infoFilm}
-            </TabPane>
-          </Tabs>
-        </TabPane>
+          <TabPane tab={logoBHDCinemaIcon} key="4">
+            <Tabs tabPosition={tabPosition} className="change-style-antd">
+              <TabPane tab={infoBHDCinema} key="4.1">
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBHDCinema} key="4.2">
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+              </TabPane>
+            </Tabs>
+          </TabPane>
 
-        <TabPane tab={logoBHDCinemaIcon} key="5">
-          <Tabs tabPosition={tabPosition} className="change-style-antd">
-            <TabPane tab={infoBHDCinema} key="5.1">
-              {infoFilm}
-              {infoFilm}
-              {infoFilm}
-            </TabPane>
-            <TabPane tab={infoBHDCinema} key="5.2">
-              {infoFilm}
-              {infoFilm}
-              {infoFilm}
-              {infoFilm}
-            </TabPane>
-          </Tabs>
-        </TabPane>
+          <TabPane tab={logoBHDCinemaIcon} key="5">
+            <Tabs tabPosition={tabPosition} className="change-style-antd">
+              <TabPane tab={infoBHDCinema} key="5.1">
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBHDCinema} key="5.2">
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+              </TabPane>
+            </Tabs>
+          </TabPane>
 
-        <TabPane tab={logoBHDCinemaIcon} key="6">
-          <Tabs tabPosition={tabPosition} className="change-style-antd">
-            <TabPane tab={infoBHDCinema} key="6.1">
-              {infoFilm}
-              {infoFilm}
-              {infoFilm}
-            </TabPane>
-            <TabPane tab={infoBHDCinema} key="6.2">
-              {infoFilm}
-              {infoFilm}
-              {infoFilm}
-              {infoFilm}
-            </TabPane>
-          </Tabs>
-        </TabPane>
+          <TabPane tab={logoBHDCinemaIcon} key="6">
+            <Tabs tabPosition={tabPosition} className="change-style-antd">
+              <TabPane tab={infoBHDCinema} key="6.1">
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBHDCinema} key="6.2">
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+              </TabPane>
+            </Tabs>
+          </TabPane>
 
-        <TabPane tab={logoBHDCinemaIcon} key="7">
-          <Tabs tabPosition={tabPosition} className="change-style-antd">
-            <TabPane tab={infoBHDCinema} key="7.1">
-              {infoFilm}
-              {infoFilm}
-              {infoFilm}
-            </TabPane>
-            <TabPane tab={infoBHDCinema} key="7.2">
-              {infoFilm}
-              {infoFilm}
-              {infoFilm}
-              {infoFilm}
-            </TabPane>
-          </Tabs>
-        </TabPane>
+          <TabPane tab={logoBHDCinemaIcon} key="7">
+            <Tabs tabPosition={tabPosition} className="change-style-antd">
+              <TabPane tab={infoBHDCinema} key="7.1">
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBHDCinema} key="7.2">
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+              </TabPane>
+            </Tabs>
+          </TabPane>
 
-        <TabPane tab={logoBHDCinemaIcon} key="8">
-          <Tabs tabPosition={tabPosition} className="change-style-antd">
-            <TabPane tab={infoBHDCinema} key="8.1">
-              {infoFilm}
-              {infoFilm}
-              {infoFilm}
-            </TabPane>
-            <TabPane tab={infoBHDCinema} key="8.2">
-              {infoFilm}
-              {infoFilm}
-              {infoFilm}
-              {infoFilm}
-            </TabPane>
-          </Tabs>
-        </TabPane>
+          <TabPane tab={logoBHDCinemaIcon} key="8">
+            <Tabs tabPosition={tabPosition} className="change-style-antd">
+              <TabPane tab={infoBHDCinema} key="8.1">
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBHDCinema} key="8.2">
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+              </TabPane>
+            </Tabs>
+          </TabPane>
 
-        <TabPane tab={logoBHDCinemaIcon} key="9">
-          <Tabs tabPosition={tabPosition} className="change-style-antd">
-            <TabPane tab={infoBHDCinema} key="9.1">
-              {infoFilm}
-              {infoFilm}
-              {infoFilm}
-            </TabPane>
-            <TabPane tab={infoBHDCinema} key="9.2">
-              {infoFilm}
-              {infoFilm}
-              {infoFilm}
-              {infoFilm}
-            </TabPane>
-          </Tabs>
-        </TabPane>
-      </Tabs>
+          <TabPane tab={logoBHDCinemaIcon} key="9">
+            <Tabs tabPosition={tabPosition} className="change-style-antd">
+              <TabPane tab={infoBHDCinema} key="9.1">
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBHDCinema} key="9.2">
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+              </TabPane>
+            </Tabs>
+          </TabPane>
+        </Tabs>
+      </div>
     </section>
   );
 }
