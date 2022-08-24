@@ -24,3 +24,15 @@ body {
   background-color: #081b27;
   color: #fff;
 }
+
+button,
+input,
+[tabindex] {
+  outline: none;
+  border: none;
+}
+
+a[href] {
+  // color: var(---text-color);
+  text-decoration: none;
+}

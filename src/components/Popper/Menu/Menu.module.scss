@@ -1,0 +1,19 @@
+// Menu
+.content {
+  min-width: 230px;
+  // padding: 8px 24px !important;
+}
+
+.menu-item {
+  width: 100%;
+  text-align: left;
+  color: #666;
+  display: block;
+  font-size: 0.875rem;
+  padding: 10px 0;
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: #000;
+  }
+}

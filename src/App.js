@@ -28,4 +28,5 @@ function App() {
   );
 }
 
+export { history };
 export default App;

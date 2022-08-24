@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-// import { useDispatch, useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import classNames from 'classnames/bind';
 import styles from './Login.module.scss';
 import { NavLink } from 'react-router-dom';
@@ -75,7 +74,7 @@ function Login() {
                   'focus:border-indigo-500',
                 )}
                 // type=""
-                placeholder="Nhap tai khoan"
+                placeholder="user@gmail.com"
               />
               {formik.errors.taiKhoan && formik.touched.taiKhoan && (
                 <span className="text-xs text-red-500">{formik.errors.taiKhoan}</span>

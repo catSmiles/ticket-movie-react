@@ -8,6 +8,7 @@ const images = {
   layout32: require('~/assets/images/banner/layout-32x32.svg').default,
   layout120x180: require('~/assets/images/banner/layout-120x180.svg').default,
   cgvIcon: require('~/assets/images/banner/cgv.jpg'),
+  avatar: require('~/assets/images/avatar.jpg'),
 };
 
 export default images;
