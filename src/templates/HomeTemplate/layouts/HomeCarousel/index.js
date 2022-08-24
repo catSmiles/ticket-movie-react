@@ -30,11 +30,13 @@ function HomeCarousel() {
         }}
         navigation={true}
         modules={[Pagination, Navigation]}
-        style={{ height: '500px' }}
-        className="container mx-auto max-w-screen-xl"
+        style={{ height: '513px', width: '100%' }}
+        // className="container mx-auto max-w-screen-xl"
       >
-        <SwiperSlide style={{ backgroundImage: `url(${images.banner})` }} className={cx('swiper-slide')} />
-        <SwiperSlide style={{ backgroundImage: `url(${images.banner})` }} className={cx('swiper-slide')} />
+        {/* <SwiperSlide style={{ backgroundImage: `url(${images.banner})` }} className={cx('swiper-slide')} /> */}
+        <SwiperSlide style={{ backgroundImage: `url(${images.bannerTwo})` }} className={cx('swiper-slide')} />
+        <SwiperSlide style={{ backgroundImage: `url(${images.bannerOne})` }} className={cx('swiper-slide')} />
+        <SwiperSlide style={{ backgroundImage: `url(${images.bannerThree})` }} className={cx('swiper-slide')} />
         {/* <SwiperSlide><img src={images.banner} alt="banner" /></SwiperSlide> */}
       </Swiper>
     </>

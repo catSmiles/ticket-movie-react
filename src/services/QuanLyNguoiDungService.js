@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-constructor */
 import { baseService } from './baseService';
-export class QuanLyNguoiDungService extends baseService {
+class QuanLyNguoiDungService extends baseService {
   constructor() {
     super();
   }

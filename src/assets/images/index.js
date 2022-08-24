@@ -9,6 +9,9 @@ const images = {
   layout120x180: require('~/assets/images/banner/layout-120x180.svg').default,
   cgvIcon: require('~/assets/images/banner/cgv.jpg'),
   avatar: require('~/assets/images/avatar.jpg'),
+  bannerOne: require('~/assets/images/banner/new_banner_one.png'),
+  bannerTwo: require('~/assets/images/banner/new_banner_two.png'),
+  bannerThree: require('~/assets/images/banner/new_banner_three.png'),
 };
 
 export default images;

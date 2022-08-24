@@ -6,14 +6,23 @@ import GlobalStyles from './components/GlobalStyles';
 import reportWebVitals from './reportWebVitals';
 import { store } from './redux/configStore';
 
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <GlobalStyles>
+//       <Provider store={store}>
+//         <App />
+//       </Provider>
+//     </GlobalStyles>
+//   </React.StrictMode>,
+//   document.getElementById('root'),
+// );
+
 ReactDOM.render(
-  <React.StrictMode>
-    <GlobalStyles>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </GlobalStyles>
-  </React.StrictMode>,
+  <GlobalStyles>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </GlobalStyles>,
   document.getElementById('root'),
 );
 

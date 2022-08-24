@@ -254,91 +254,10 @@ function HomeMenu({ data }) {
     </div>
   );
 
-  const renderLogoCinemaIcon = (image, title) => {
-    return (
-      <div className="relative cursor-pointer w-16">
-        <div className="relative mx-auto flex h-12 w-12 items-center justify-center overflow-hidden rounded-lg border bg-white border-gray-200">
-          <span
-            style={{
-              boxSizing: 'border-box',
-              display: 'inline-block',
-              overflow: 'hidden',
-              width: 'initial',
-              height: 'initial',
-              background: 'none',
-              opacity: '1',
-              border: '0px',
-              margin: '0px',
-              padding: '0px',
-              position: 'relative',
-              maxwidth: '100%',
-            }}
-          >
-            <span
-              style={{
-                boxSizing: 'borderBox',
-                display: 'block',
-                width: 'initial',
-                height: 'initial',
-                background: 'none',
-                opacity: '1',
-                border: '0px',
-                margin: '0px',
-                padding: '0px',
-                maxWidth: '100%',
-              }}
-            >
-              <img
-                alt=""
-                aria-hidden="true"
-                src={images.layout38}
-                style={{
-                  display: 'block',
-                  maxwidth: '100%',
-                  width: 'initial',
-                  height: 'initial',
-                  background: 'none',
-                  opacity: '1',
-                  border: '0px',
-                  margin: '0px',
-                  padding: '0px',
-                }}
-              />
-            </span>
-            <img
-              alt={title}
-              src={image}
-              decoding="async"
-              data-nimg="intrinsic"
-              style={{
-                position: 'absolute',
-                inset: '0px',
-                boxSizing: 'border-box',
-                padding: '0px',
-                border: 'none',
-                margin: 'auto',
-                display: 'block',
-                width: '0px',
-                height: '0px',
-                minWidth: '100%',
-                maxWidth: '100%',
-                minHeight: '100%',
-                maxHeight: '100%',
-              }}
-            />
-          </span>
-        </div>
-        <div className="mt-2 ml-1 overflow-hidden text-ellipsis whitespace-nowrap text-center text-xs text-gray-500">
-          {title}
-        </div>
-      </div>
-    );
-  };
-
   // INFO
   const infoBHDCinema = (
     <div className="cursor-pointer  md:hover:bg-gray-50">
-      <div className="relative block py-2 px-4">
+      <div className="fwefwe relative block py-2 px-4">
         <div className="z-1 absolute inset-0 bg-transparent"></div>
         <div className="flex flex-nowrap items-center ">
           <div className="flex h-9 w-9 flex-none items-center justify-center overflow-hidden rounded border border-gray-200 bg-white ">
@@ -433,7 +352,7 @@ function HomeMenu({ data }) {
 
   const infoGalaxyCinema = (
     <div className="cursor-pointer  md:hover:bg-gray-50">
-      <div className="relative block py-2 px-4">
+      <div className="fwefwe relative block py-2 px-4">
         <div className="z-1 absolute inset-0 bg-transparent"></div>
         <div className="flex flex-nowrap items-center ">
           <div className="flex h-9 w-9 flex-none items-center justify-center overflow-hidden rounded border border-gray-200 bg-white ">
@@ -528,7 +447,7 @@ function HomeMenu({ data }) {
 
   const infoBetaCinema = (
     <div className="cursor-pointer  md:hover:bg-gray-50">
-      <div className="relative block py-2 px-4">
+      <div className="fwefwe relative block py-2 px-4">
         <div className="z-1 absolute inset-0 bg-transparent"></div>
         <div className="flex flex-nowrap items-center ">
           <div className="flex h-9 w-9 flex-none items-center justify-center overflow-hidden rounded border border-gray-200 bg-white ">
@@ -622,106 +541,6 @@ function HomeMenu({ data }) {
       </div>
     </div>
   );
-
-  const renderInfoCinema = (image, title) => {
-    return (
-      <div className="cursor-pointer  md:hover:bg-gray-50">
-        <div className="relative block py-2 px-4">
-          <div className="z-1 absolute inset-0 bg-transparent"></div>
-          <div className="flex flex-nowrap items-center ">
-            <div className="flex h-9 w-9 flex-none items-center justify-center overflow-hidden rounded border border-gray-200 bg-white ">
-              <span
-                style={{
-                  boxSizing: 'borderBox',
-                  display: 'inlineBlock',
-                  overflow: 'hidden',
-                  width: 'initial',
-                  height: 'initial',
-                  background: 'none',
-                  opacity: '1',
-                  border: '0px',
-                  margin: '0px',
-                  padding: '0px',
-                  position: 'relative',
-                  maxWidth: '100%',
-                }}
-              >
-                <span
-                  style={{
-                    boxSizing: 'borderBox',
-                    display: 'block',
-                    width: 'initial',
-                    height: 'initial',
-                    background: 'none',
-                    opacity: '1',
-                    border: '0px',
-                    margin: '0px',
-                    padding: '0px',
-                    maxWidth: '100%',
-                  }}
-                >
-                  <img
-                    alt=""
-                    aria-hidden="true"
-                    src={images.layout32}
-                    style={{
-                      display: 'block',
-                      maxWidth: '100%',
-                      width: 'initial',
-                      height: 'initial',
-                      background: 'none',
-                      opacity: '1',
-                      border: '0px',
-                      margin: '0px',
-                      padding: '0px',
-                    }}
-                  />
-                </span>
-                <img
-                  alt={title}
-                  src={image}
-                  decoding="async"
-                  data-nimg="intrinsic"
-                  style={{
-                    position: 'absolute',
-                    inset: '0px',
-                    boxSizing: 'border-box',
-                    padding: '0px',
-                    border: 'none',
-                    margin: 'auto',
-                    display: 'block',
-                    width: '0px',
-                    height: '0px',
-                    minWidth: '100%',
-                    maxWidth: '100%',
-                    minHeight: '100%',
-                    maxHeight: '100%',
-                  }}
-                />
-              </span>
-            </div>
-            <div
-              className="mb-0 min-w-0 flex-1 pl-3 text-md leading-tight text-gray-800"
-              style={{ minWidth: '280px', textAlign: 'left' }}
-            >
-              <span>{title}</span>
-            </div>
-            <div className="hidden flex-none self-center pl-2 md:block md:pl-5 ">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-4 w-4 text-gray-400"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  };
 
   // FILM
   const infoFilm = (
@@ -863,24 +682,6 @@ function HomeMenu({ data }) {
     </div>
   );
 
-  const renderHeThongRap = () => {
-    return data.map((heThongRap, index) => {
-      return (
-        <TabPane tab={renderLogoCinemaIcon(heThongRap.logo, heThongRap.tenHeThongRap)} key={index}>
-          <Tabs tabPosition={tabPosition} className="change-style-antd">
-            {heThongRap.lstCumRap?.map((cumRap, index) => {
-              return (
-                <TabPane tab={renderInfoCinema(heThongRap.logo, cumRap.tenCumRap)} key={index}>
-                  Phim dang chieu
-                </TabPane>
-              );
-            })}
-          </Tabs>
-        </TabPane>
-      );
-    });
-  };
-
   return (
     <section className="bg-white py-8 md:py-10 lg:py-14">
       <div className="container max-w-screen-xl mx-auto bg-white mb-20">
@@ -900,7 +701,173 @@ function HomeMenu({ data }) {
           )}
           // style={{ border: '1px solid #000', padding: '1rem' }}
         >
-          {renderHeThongRap()}
+          {/* Cinema Beta */}
+          <TabPane tab={logoBetaCinemaIcon} key="1">
+            <Tabs tabPosition={tabPosition} className="change-style-antd">
+              <TabPane tab={infoBetaCinema} key="1.1">
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBetaCinema} key="1.2">
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBetaCinema} key="1.3">
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBetaCinema} key="1.4">
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBetaCinema} key="1.5">
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBetaCinema} key="1.6">
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBetaCinema} key="1.7">
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBetaCinema} key="1.8">
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBetaCinema} key="1.9">
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBetaCinema} key="1.10">
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBetaCinema} key="1.11">
+                {infoFilm}
+              </TabPane>
+            </Tabs>
+          </TabPane>
+
+          {/* Cinema Galaxy */}
+          <TabPane tab={logoGalaxyCinemaIcon} key="2">
+            <Tabs tabPosition={tabPosition} className="change-style-antd">
+              <TabPane tab={infoGalaxyCinema} key="2.1">
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoGalaxyCinema} key="2.2">
+                {infoFilm}
+                {infoFilm}
+              </TabPane>
+            </Tabs>
+          </TabPane>
+
+          {/* Cinema BHD */}
+          <TabPane tab={logoBHDCinemaIcon} key="3">
+            <Tabs tabPosition={tabPosition} className="change-style-antd">
+              <TabPane tab={infoBHDCinema} key="3.1">
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBHDCinema} key="3.2">
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+              </TabPane>
+            </Tabs>
+          </TabPane>
+
+          <TabPane tab={logoBHDCinemaIcon} key="4">
+            <Tabs tabPosition={tabPosition} className="change-style-antd">
+              <TabPane tab={infoBHDCinema} key="4.1">
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBHDCinema} key="4.2">
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+              </TabPane>
+            </Tabs>
+          </TabPane>
+
+          <TabPane tab={logoBHDCinemaIcon} key="5">
+            <Tabs tabPosition={tabPosition} className="change-style-antd">
+              <TabPane tab={infoBHDCinema} key="5.1">
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBHDCinema} key="5.2">
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+              </TabPane>
+            </Tabs>
+          </TabPane>
+
+          <TabPane tab={logoBHDCinemaIcon} key="6">
+            <Tabs tabPosition={tabPosition} className="change-style-antd">
+              <TabPane tab={infoBHDCinema} key="6.1">
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBHDCinema} key="6.2">
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+              </TabPane>
+            </Tabs>
+          </TabPane>
+
+          <TabPane tab={logoBHDCinemaIcon} key="7">
+            <Tabs tabPosition={tabPosition} className="change-style-antd">
+              <TabPane tab={infoBHDCinema} key="7.1">
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBHDCinema} key="7.2">
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+              </TabPane>
+            </Tabs>
+          </TabPane>
+
+          <TabPane tab={logoBHDCinemaIcon} key="8">
+            <Tabs tabPosition={tabPosition} className="change-style-antd">
+              <TabPane tab={infoBHDCinema} key="8.1">
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBHDCinema} key="8.2">
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+              </TabPane>
+            </Tabs>
+          </TabPane>
+
+          <TabPane tab={logoBHDCinemaIcon} key="9">
+            <Tabs tabPosition={tabPosition} className="change-style-antd">
+              <TabPane tab={infoBHDCinema} key="9.1">
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+              </TabPane>
+              <TabPane tab={infoBHDCinema} key="9.2">
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+                {infoFilm}
+              </TabPane>
+            </Tabs>
+          </TabPane>
         </Tabs>
       </div>
     </section>

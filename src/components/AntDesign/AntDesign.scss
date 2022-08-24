@@ -52,6 +52,10 @@
   display: none;
 }
 
+.custom-class-antd > .ant-tabs-content-holder > .ant-tabs-content > .ant-tabs-tabpane {
+  padding-left: 0;
+}
+
 // .ant-tabs-tab-btn {
 //   // border: 1px solid #000;
 // }

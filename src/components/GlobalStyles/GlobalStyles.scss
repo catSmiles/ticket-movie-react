@@ -21,8 +21,9 @@ body {
   font-family: var(--ff-main);
   font-weight: 600;
   font-size: 17px;
-  background-color: #081b27;
-  color: #fff;
+  // background-color: #081b27;
+  // color: #fff;
+  color: rgb(89, 89, 89);
 }
 
 button,
@@ -35,4 +36,8 @@ input,
 a[href] {
   // color: var(---text-color);
   text-decoration: none;
+
+  &:hover {
+    color: unset;
+  }
 }
