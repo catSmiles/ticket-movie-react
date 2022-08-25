@@ -15,6 +15,8 @@ import styles from './SwiperCarousel.module.scss';
 // Swiperjs - Libary
 import { Pagination, Navigation } from 'swiper';
 import images from '~/assets/images';
+import { history } from '~/App';
+import { NavLink } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -66,7 +68,12 @@ function SwiperCarousel({ data = [], ...props }) {
             {data.map((filmItem, index) => {
               return (
                 <SwiperSlide key={index} className="h-auto">
-                  <a className="group relative block" href="#">
+                  <a
+                    className="group relative block"
+                    onClick={() => {
+                      history.push(`/detail/${filmItem.maPhim}`);
+                    }}
+                  >
                     <div className="background-gray-100 relative z-10 overflow-hidden rounded">
                       <div className=" flex  bg-black">
                         <span className={cx('wrap-img')}>
@@ -133,10 +140,10 @@ function SwiperCarousel({ data = [], ...props }) {
                       className="font-semibold leading-tight"
                       style={props.backgroundImage ? { color: 'white' } : {}}
                     >
-                      <a className="" href="#">
+                      <NavLink className="" to={`/detail/${filmItem.maPhim}`}>
                         {/* Bảy Viên Ngọc Rồng Siêu Cấp: Siêu Anh Hùng */}
                         {filmItem.tenPhim}
-                      </a>
+                      </NavLink>
                     </div>
                   </div>
                 </SwiperSlide>

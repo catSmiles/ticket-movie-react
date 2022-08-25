@@ -1,7 +1,9 @@
 import { SET_DANH_SACH_PHIM } from '../actions/types/QuanLyPhimType';
+import { SET_CHI_TIET_PHIM } from '../actions/types/QuanLyRapType';
 
 const stateDefault = {
   arrFilm: [],
+  filmDetail: {},
 };
 
 export const QuanLyPhimReducer = (state = stateDefault, action) => {
@@ -10,7 +12,10 @@ export const QuanLyPhimReducer = (state = stateDefault, action) => {
       state.arrFilm = action.payload;
       // console.log('state.arrFilm: ', state.arrFilm);
       return { ...state };
-
+    case SET_CHI_TIET_PHIM:
+      state.filmDetail = action.payload;
+      // console.log('FilmDetail at Quan ly phim: ', state);
+      return { ...state };
     default:
       return { ...state };
   }

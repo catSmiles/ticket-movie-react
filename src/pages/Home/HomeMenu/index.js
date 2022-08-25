@@ -196,7 +196,7 @@ const renderInfoCinema = (image, title) => {
 
 function HomeMenu({ data }) {
   const tabPosition = 'left';
-  console.log('HomeMenu data: ', data);
+  // console.log('HomeMenu data: ', data);
 
   const renderHeThongRap = () => {
     return data.map((heThongRap, index) => {

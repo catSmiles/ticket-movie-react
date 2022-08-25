@@ -1,6 +1,6 @@
 import { quanLyPhimService } from '~/services/QuanLyPhimService';
 import { SET_DANH_SACH_PHIM } from './types/QuanLyPhimType';
-import { SUCCESSFUL_REQUESTS } from '~/variables';
+// import { SUCCESSFUL_REQUESTS } from '~/variables';
 
 export const layDanhSachPhimAction = () => {
   return async (dispatch) => {
