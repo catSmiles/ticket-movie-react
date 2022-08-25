@@ -10,10 +10,12 @@ import { layDanhSachPhimAction } from '~/redux/actions/QuanLyPhimAction';
 import { layDanhSachHeThongRapAction } from '~/redux/actions/QuanLyRapAction';
 function Home() {
   console.log('Home re-render');
+  const dispatch = useDispatch();
   // Call API here
   const { arrFilm } = useSelector((state) => state.QuanLyPhimReducer);
   const { heThongRapChieu } = useSelector((state) => state.QuanLyRapReducer);
-  const dispatch = useDispatch();
+
+  // dispatch(layDanhSachHeThongRapAction());
   useEffect(() => {
     dispatch(layDanhSachPhimAction());
     dispatch(layDanhSachHeThongRapAction());

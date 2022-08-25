@@ -4,7 +4,6 @@ import { Route } from 'react-router-dom';
 // Component
 import Header from './layouts/Header';
 import Footer from './layouts/Footer';
-import { useEffect } from 'react';
 
 function HomeTemplate({ Component, ...restProps }) {
   // console.log('HomeTemplate props: ', restProps);

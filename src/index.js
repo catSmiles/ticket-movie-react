@@ -6,25 +6,25 @@ import GlobalStyles from './components/GlobalStyles';
 import reportWebVitals from './reportWebVitals';
 import { store } from './redux/configStore';
 
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <GlobalStyles>
-//       <Provider store={store}>
-//         <App />
-//       </Provider>
-//     </GlobalStyles>
-//   </React.StrictMode>,
-//   document.getElementById('root'),
-// );
-
 ReactDOM.render(
-  <GlobalStyles>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </GlobalStyles>,
+  <Provider store={store}>
+    <React.StrictMode>
+      <GlobalStyles>
+        <App />
+      </GlobalStyles>
+    </React.StrictMode>
+  </Provider>,
   document.getElementById('root'),
 );
+
+// ReactDOM.render(
+//   <GlobalStyles>
+//     <Provider store={store}>
+//       <App />
+//     </Provider>
+//   </GlobalStyles>,
+//   document.getElementById('root'),
+// );
 
 // @react18
 // const root = ReactDOM.createRoot(document.getElementById('root'));
