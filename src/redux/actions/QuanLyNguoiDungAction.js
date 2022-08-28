@@ -1,5 +1,5 @@
 import { quanLyNguoiDungService } from '~/services/QuanLyNguoiDungService';
-import { DANG_NHAP_ACTION } from './types/QuanLyNguoiDungType';
+import { DANG_NHAP_ACTION, SET_THONG_TIN_NGUOI_DUNG } from './types/QuanLyNguoiDungType';
 import { SUCCESSFUL_REQUESTS } from '~/variables';
 import { history } from '~/App';
 
@@ -38,6 +38,24 @@ export const dangKyAction = (thongTinDangKy) => {
       history.push('/login');
     } catch (error) {
       alert(JSON.stringify(error, null, 2));
+    }
+  };
+};
+
+// export const layThongTinNguoiDungAction = (thongTinDangNhap) => {
+export const layThongTinNguoiDungAction = () => {
+  return async (dispatch) => {
+    try {
+      const result = await quanLyNguoiDungService.layThongTinNguoiDung();
+      // console.log('result lay thong tin nguoi dung action: ', result);
+      if (result.data.statusCode === SUCCESSFUL_REQUESTS) {
+        dispatch({
+          type: SET_THONG_TIN_NGUOI_DUNG,
+          payload: result.data.content,
+        });
+      }
+    } catch (error) {
+      console.log('Error lay thong tin nguoi dung action: ', error);
     }
   };
 };

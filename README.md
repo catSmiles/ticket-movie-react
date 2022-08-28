@@ -6,3 +6,7 @@
    --> Tailwind CSS
 2. How to using my's CSS write?
    --> Using classNames libary & css module
+
+## Date: 28-08-2022
+
+1. Tam dừng chức năng đặt vế realtime

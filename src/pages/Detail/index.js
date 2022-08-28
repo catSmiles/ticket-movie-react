@@ -8,6 +8,8 @@ import { Tabs } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import moment from 'moment';
+import './Detail.scss';
+import { NavLink } from 'react-router-dom';
 
 const { TabPane } = Tabs;
 const cx = classNames.bind(styles);
@@ -198,7 +200,9 @@ function Detail(props) {
               </div>
             </div>
             <div className="relative z-10 w-full md:w-auto">
-              <h1 className="mt-2 text-3xl font-bold text-white md:text-4xl">{filmDetail.tenPhim}</h1>
+              <h1 className="mt-2 text-3xl font-bold text-white md:text-4xl">
+                {filmDetail.tenPhim}
+              </h1>
               <div className="flex flex-nowrap space-x-2 overflow-x-auto overflow-y-hidden pt-2 pb-3 md:space-x-3">
                 <div className="cine__score imdb  flex shrink-0 flex-nowrap  items-center">
                   <div>
@@ -212,7 +216,14 @@ function Detail(props) {
                       className="w-11"
                     >
                       <g fill="#F5C518" className="jsx-f9389667183552d6">
-                        <rect x="0" y="0" width="100%" height="100%" rx="4" className="jsx-f9389667183552d6"></rect>
+                        <rect
+                          x="0"
+                          y="0"
+                          width="100%"
+                          height="100%"
+                          rx="4"
+                          className="jsx-f9389667183552d6"
+                        ></rect>
                       </g>
                       <g
                         transform="translate(8.000000, 7.000000)"
@@ -220,7 +231,10 @@ function Detail(props) {
                         fillRule="nonzero"
                         className="jsx-f9389667183552d6"
                       >
-                        <polygon points="0 18 5 18 5 0 0 0" className="jsx-f9389667183552d6"></polygon>
+                        <polygon
+                          points="0 18 5 18 5 0 0 0"
+                          className="jsx-f9389667183552d6"
+                        ></polygon>
                         <path
                           d="M15.6725178,0 L14.5534833,8.40846934 L13.8582008,3.83502426 C13.65661,2.37009263 13.4632474,1.09175121 13.278113,0 L7,0 L7,18 L11.2416347,18 L11.2580911,6.11380679 L13.0436094,18 L16.0633571,18 L17.7583653,5.8517865 L17.7707076,18 L22,18 L22,0 L15.6725178,0 Z"
                           className="jsx-f9389667183552d6"
@@ -242,14 +256,18 @@ function Detail(props) {
                   </div>
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-white text-opacity-90">Nội dung</h3>
+              <h3 className="text-xl font-bold text-white text-opacity-90">
+                Nội dung
+              </h3>
               <div className="mt-2 text-sm leading-relaxed text-white text-opacity-70 xl:max-w-xl">
                 {filmDetail.moTa}
               </div>
               <div className="mt-3 text-sm text-gray-700 ">
                 <div className="mb-2 flex flex-nowrap space-x-4 md:space-x-5">
                   <div className="">
-                    <div className="whitespace-nowrap text-white text-opacity-50">Ngày chiếu</div>
+                    <div className="whitespace-nowrap text-white text-opacity-50">
+                      Ngày chiếu
+                    </div>
                     <div className="mt-1 font-bold text-white text-opacity-90">
                       {moment(filmDetail.ngayKhoiChieu).format('DD/MM/YYYY')}
                     </div>
@@ -271,6 +289,7 @@ function Detail(props) {
             tabPosition={tabPosition}
             className={cx(
               'custom-class-antd',
+              'change-style-antd-deital-comp',
               'shadow-soju1',
               'rounded-lg',
               'border-gray-200',
@@ -280,7 +299,13 @@ function Detail(props) {
           >
             {filmDetail.heThongRapChieu?.map((heThongRap) => {
               return (
-                <TabPane tab={logoCinemaIcon(heThongRap.logo, heThongRap.tenHeThongRap)} key={heThongRap.maHeThongRap}>
+                <TabPane
+                  tab={logoCinemaIcon(
+                    heThongRap.logo,
+                    heThongRap.tenHeThongRap,
+                  )}
+                  key={heThongRap.maHeThongRap}
+                >
                   {heThongRap.cumRapChieu?.map((cumRap) => {
                     return (
                       <div key={cumRap.maCumRap}>
@@ -370,18 +395,23 @@ function Detail(props) {
                           </div>
                         </div>
                         <div className="px-0 pb-5 md:px-4">
-                          <div className="mb-2 text-sm font-bold ">2D Phụ đề</div>
+                          <div className="mb-2 text-sm font-bold ">
+                            2D Phụ đề
+                          </div>
                           <div className="grid grid-cols-3 gap-3 md:grid-cols-5 ">
                             {cumRap.lichChieuPhim?.map((lichChieu) => {
                               return (
-                                <div
+                                <NavLink
+                                  to={`/checkout/${lichChieu.maLichChieu}`}
                                   key={lichChieu.maLichChieu}
                                   className="tracking-engage-btn-showtime group cursor-pointer whitespace-nowrap rounded-md border border-sky-400 bg-sky-100/5 px-2 py-1 text-center text-tiny text-sky-600 hover:bg-white hover:text-sky-500"
                                 >
                                   <strong className="text-md font-semibold ">
-                                    {moment(lichChieu.ngayChieuGioChieu).format('hh:mm A')}
+                                    {moment(lichChieu.ngayChieuGioChieu).format(
+                                      'hh:mm A',
+                                    )}
                                   </strong>
-                                </div>
+                                </NavLink>
                               );
                             })}
                           </div>

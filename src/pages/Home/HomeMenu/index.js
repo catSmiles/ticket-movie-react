@@ -3,6 +3,7 @@
 // import { Radio, Space, Tabs } from 'antd';
 import classNames from 'classnames/bind';
 import styles from './HomeMenu.module.scss';
+import { NavLink } from 'react-router-dom';
 
 import { Tabs } from 'antd';
 import images from '~/assets/images';
@@ -185,7 +186,12 @@ const renderInfoCinema = (image, title) => {
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M9 5l7 7-7 7"
+              ></path>
             </svg>
           </div>
         </div>
@@ -201,19 +207,40 @@ function HomeMenu({ data }) {
   const renderHeThongRap = () => {
     return data.map((heThongRap, index) => {
       return (
-        <TabPane tab={renderLogoCinemaIcon(heThongRap.logo, heThongRap.tenHeThongRap)} key={index}>
+        <TabPane
+          tab={renderLogoCinemaIcon(heThongRap.logo, heThongRap.tenHeThongRap)}
+          key={index}
+        >
           <Tabs tabPosition={tabPosition} className="change-style-antd">
             {heThongRap.lstCumRap?.map((cumRap, index) => {
               return (
-                <TabPane tab={renderInfoCinema(heThongRap.logo, cumRap.tenCumRap)} key={index}>
+                <TabPane
+                  tab={renderInfoCinema(heThongRap.logo, cumRap.tenCumRap)}
+                  key={index}
+                >
                   {/* Phim tuong ung */}
                   {cumRap.danhSachPhim?.map((phim, index) => {
                     return (
                       <div className="grid" key={index}>
-                        <div className="block w-full px-4 py-4 text-left" style={{ borderTop: '1px solid #ddd' }}>
-                          <div className={cx('film-show', 'grid', 'gap-y-0', 'gap-x-4', 'md:gap-x-4', 'lg:gap-x-6')}>
+                        <div
+                          className="block w-full px-4 py-4 text-left"
+                          style={{ borderTop: '1px solid #ddd' }}
+                        >
+                          <div
+                            className={cx(
+                              'film-show',
+                              'grid',
+                              'gap-y-0',
+                              'gap-x-4',
+                              'md:gap-x-4',
+                              'lg:gap-x-6',
+                            )}
+                          >
                             <div className="col-start-1 row-span-2 row-start-1">
-                              <a className="group block" href="#">
+                              <NavLink
+                                className="group block"
+                                to={`/detail/${phim.maPhim}`}
+                              >
                                 <div className="bg-gray-100  relative overflow-hidden rounded">
                                   <div className="flex bg-gray-200">
                                     <span
@@ -288,31 +315,41 @@ function HomeMenu({ data }) {
                                     </span>
                                   </div>
                                 </div>
-                              </a>
+                              </NavLink>
                             </div>
                             <div className="col-start-2">
                               <div className="font-semibold leading-tight text-gray-800">
-                                <a className="" href="#">
+                                <NavLink
+                                  className=""
+                                  to={`/detail/${phim.maPhim}`}
+                                >
                                   {phim.tenPhim}
-                                </a>
+                                </NavLink>
                               </div>
                             </div>
                             <div className=" col-span-2 col-start-1 md:col-start-2">
                               <div className="pt-4 pb-4">
-                                <div className="mb-2 text-sm font-semibold ">2D Phụ đề</div>
+                                <div className="mb-2 text-sm font-semibold ">
+                                  2D Phụ đề
+                                </div>
                                 <div className="grid grid-cols-3 gap-3 md:grid-cols-3 lg:grid-cols-4 ">
-                                  {phim.lstLichChieuTheoPhim?.map((lichChieu, index) => {
-                                    return (
-                                      <div
-                                        key={index}
-                                        className="group cursor-pointer whitespace-nowrap rounded-md border border-sky-400 bg-sky-100/5 px-2 py-1 text-center text-tiny text-sky-600 hover:bg-white hover:text-sky-500"
-                                      >
-                                        <strong className="text-md font-semibold ">
-                                          {moment(lichChieu.ngayChieuGioChieu).format('hh:mm A')}
-                                        </strong>
-                                      </div>
-                                    );
-                                  })}
+                                  {phim.lstLichChieuTheoPhim?.map(
+                                    (lichChieu, index) => {
+                                      return (
+                                        <NavLink
+                                          to={`/checkout/${lichChieu.maLichChieu}`}
+                                          key={index}
+                                          className="group cursor-pointer whitespace-nowrap rounded-md border border-sky-400 bg-sky-100/5 px-2 py-1 text-center text-tiny text-sky-600 hover:bg-white hover:text-sky-500"
+                                        >
+                                          <strong className="text-md font-semibold ">
+                                            {moment(
+                                              lichChieu.ngayChieuGioChieu,
+                                            ).format('hh:mm A')}
+                                          </strong>
+                                        </NavLink>
+                                      );
+                                    },
+                                  )}
                                 </div>
                               </div>
                             </div>
@@ -333,7 +370,9 @@ function HomeMenu({ data }) {
   return (
     <section className="bg-white py-8 md:py-10 lg:py-14">
       <div className="container max-w-screen-xl mx-auto bg-white mb-20">
-        <h2 className="text-2xl font-bold lg:text-3xl text-black text-center mb-12">Lịch chiếu phim</h2>
+        <h2 className="text-2xl font-bold lg:text-3xl text-black text-center mb-12">
+          Lịch chiếu phim
+        </h2>
         {/* tabs component */}
         <Tabs
           tabPosition={tabPosition}

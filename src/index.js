@@ -5,17 +5,33 @@ import App from './App';
 import GlobalStyles from './components/GlobalStyles';
 import reportWebVitals from './reportWebVitals';
 import { store } from './redux/configStore';
+import { DOMAIN } from './util/settings/config';
 
-ReactDOM.render(
-  <Provider store={store}>
-    <React.StrictMode>
-      <GlobalStyles>
-        <App />
-      </GlobalStyles>
-    </React.StrictMode>
-  </Provider>,
-  document.getElementById('root'),
-);
+import * as signalR from '@aspnet/signalr';
+
+//Đoạn code để kết nối đến server lắng nghe sự kiện từ server
+export const connection = new signalR.HubConnectionBuilder()
+  .withUrl(`${DOMAIN}/DatVeHub`)
+  .configureLogging(signalR.LogLevel.Information)
+  .build();
+
+connection
+  .start()
+  .then(() => {
+    ReactDOM.render(
+      <Provider store={store}>
+        <React.StrictMode>
+          <GlobalStyles>
+            <App />
+          </GlobalStyles>
+        </React.StrictMode>
+      </Provider>,
+      document.getElementById('root'),
+    );
+  })
+  .catch((errors) => {
+    console.log('errors connection from index.js: ', errors);
+  });
 
 // ReactDOM.render(
 //   <GlobalStyles>
