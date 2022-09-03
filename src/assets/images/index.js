@@ -1,6 +1,7 @@
 const images = {
   backCardFilm: require('~/assets/images/banner/back-card-film.svg').default,
   logo: require('~/assets/images/logo.png'),
+  dashboard: require('~/assets/images/dashboard.jpg'),
   banner: require('~/assets/images/banner/banner1.jpg'),
   background: require('~/assets/images/banner/background.jpg'),
   film: require('~/assets/images/banner/film.jpg'),

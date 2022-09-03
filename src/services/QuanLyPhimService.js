@@ -6,7 +6,8 @@ class QuanLyPhimService extends baseService {
   constructor() {
     super();
   }
-  layDanhSachPhim = () => {
+  layDanhSachPhim = (tenPhim = '') => {
+    if (tenPhim !== '') return this.get(`/api/QuanLyPhim/LayDanhSachPhim?maNhom=${GROUP_ID}&tenPhim=${tenPhim}`);
     return this.get(`/api/QuanLyPhim/LayDanhSachPhim?maNhom=${GROUP_ID}`);
   };
 }

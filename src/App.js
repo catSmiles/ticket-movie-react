@@ -13,7 +13,10 @@ import Register from './pages/Register';
 import Detail from './pages/Detail';
 import CheckOutTemplate from './templates/CheckOutTemplate';
 import CheckOut from './pages/CheckOut';
-import Loading from './components/Loading';
+// import Loading from './components/Loading';
+import AdminTemplate from './templates/AdminTemplate';
+import Dashboard from './pages/Admin/Dashboard';
+import Films from './pages/Admin/Films';
 
 const history = createBrowserHistory();
 
@@ -33,6 +36,10 @@ function App() {
         {/* User Template */}
         <UserTemplate exact path="/login" Component={Login} />
         <UserTemplate exact path="/register" Component={Register} />
+
+        {/* Admin Template */}
+        <AdminTemplate exact path="/admin" Component={Dashboard} />
+        <AdminTemplate exact path="/admin/films" Component={Films} />
       </Switch>
     </Router>
   );

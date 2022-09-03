@@ -2,10 +2,10 @@ import { quanLyPhimService } from '~/services/QuanLyPhimService';
 import { SET_DANH_SACH_PHIM } from './types/QuanLyPhimType';
 // import { SUCCESSFUL_REQUESTS } from '~/variables';
 
-export const layDanhSachPhimAction = () => {
+export const layDanhSachPhimAction = (tenPhim = '') => {
   return async (dispatch) => {
     try {
-      const result = await quanLyPhimService.layDanhSachPhim();
+      const result = await quanLyPhimService.layDanhSachPhim(tenPhim);
       dispatch({
         type: SET_DANH_SACH_PHIM,
         payload: result.data.content,

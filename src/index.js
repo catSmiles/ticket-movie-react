@@ -20,11 +20,11 @@ connection
   .then(() => {
     ReactDOM.render(
       <Provider store={store}>
-        <React.StrictMode>
-          <GlobalStyles>
-            <App />
-          </GlobalStyles>
-        </React.StrictMode>
+        {/* <React.StrictMode> */}
+        <GlobalStyles>
+          <App />
+        </GlobalStyles>
+        {/* </React.StrictMode> */}
       </Provider>,
       document.getElementById('root'),
     );

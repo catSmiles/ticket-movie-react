@@ -2,6 +2,7 @@ import { quanLyNguoiDungService } from '~/services/QuanLyNguoiDungService';
 import { DANG_NHAP_ACTION, SET_THONG_TIN_NGUOI_DUNG } from './types/QuanLyNguoiDungType';
 import { SUCCESSFUL_REQUESTS } from '~/variables';
 import { history } from '~/App';
+import { Redirect } from 'react-router-dom';
 
 export const dangNhapAction = (thongTinDangNhap) => {
   return async (dispatch) => {
@@ -16,11 +17,14 @@ export const dangNhapAction = (thongTinDangNhap) => {
         if (result.data.content.maLoaiNguoiDung === 'QuanTri') {
           alert('Hello Admin');
           // go to admin admin template
+          history.push('/admin');
+        } else if (result.data.content.maLoaiNguoiDung === 'KhachHang') {
+          history.push('/');
         }
+
         // alert('Dang nhap thanh cong');
         // Chuyen huong ve trang truoc do
         // history.goBack();
-        history.push('/');
       }
     } catch (error) {
       alert(JSON.stringify(error.response.data.content));

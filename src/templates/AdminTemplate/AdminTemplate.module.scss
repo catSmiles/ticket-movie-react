@@ -1,0 +1,110 @@
+.wrapper {
+  height: 80px;
+  // background-color: #0c2738;
+  // color: #899ead;
+  color: rgb(89, 89, 89);
+}
+
+// Group action
+.group-action {
+  min-width: 220px;
+  display: flex;
+  justify-content: flex-end;
+  // border: 1px solid #fff;
+  margin-right: 2.25rem; // 36px
+}
+.action-btn,
+.user {
+  margin-left: auto;
+}
+
+.action-btn {
+  padding: 1.2rem 3.2rem;
+  border-radius: 0.4rem;
+  border: 1px solid transparent;
+  transition: color 0.2s;
+  // border-color: #fff;
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+.bars-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  color: #899ead;
+}
+
+// Avatar
+.avatar {
+  text-align: right;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 28px;
+  margin-left: 12px;
+  object-fit: cover;
+  width: 28px;
+}
+
+// Menu
+.menu-wrapper {
+  background-color: #fff;
+  min-width: 230px;
+  padding: 8px 24px;
+  border-radius: 10px;
+  box-shadow: 0 -4px 32px rgb(0 0 0 / 20%);
+  color: #1d2129;
+  margin: 0;
+  overflow: hidden;
+}
+.menu-wrapper hr {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  margin: 8px 0;
+}
+
+.user-wrapper {
+  align-items: center;
+  display: flex;
+}
+
+.user-avatar {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin: 10px 0;
+}
+
+.user-info {
+  margin-left: 12px;
+}
+.user-name {
+  color: #292929;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.user-nickname {
+  color: #757575;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.menu-item {
+  width: 100%;
+  font-weight: 600;
+  text-align: left;
+  color: #666;
+  display: block;
+  font-size: 0.875rem;
+  padding: 10px 0;
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: #000;
+  }
+}
+
+// hr css
