@@ -10,6 +10,12 @@ class QuanLyPhimService extends baseService {
     if (tenPhim !== '') return this.get(`/api/QuanLyPhim/LayDanhSachPhim?maNhom=${GROUP_ID}&tenPhim=${tenPhim}`);
     return this.get(`/api/QuanLyPhim/LayDanhSachPhim?maNhom=${GROUP_ID}`);
   };
+  xoaPhim = (maPhim) => {
+    return this.delete(`/api/QuanLyPhim/XoaPhim?MaPhim=${maPhim}`);
+  };
+  themPhimUploadHinh = (formData) => {
+    return this.post('/api/QuanLyPhim/ThemPhimUploadHinh', formData);
+  };
 }
 
 export const quanLyPhimService = new QuanLyPhimService();

@@ -16,3 +16,27 @@ export const layDanhSachPhimAction = (tenPhim = '') => {
     }
   };
 };
+
+export const xoaPhimAction = (maPhim) => {
+  return async (dispatch) => {
+    try {
+      let result = await quanLyPhimService.xoaPhim(maPhim);
+      console.log('result xoa phim action: ', result);
+      dispatch(layDanhSachPhimAction());
+    } catch (error) {
+      console.log('Error xoa phim action: ', error);
+    }
+  };
+};
+
+export const themPhimUploadHinhAction = (formData) => {
+  return async (dispatch) => {
+    try {
+      let result = await quanLyPhimService.themPhimUploadHinh(formData);
+      console.log('result themPhimUploadHinhAction: ', result.data.content);
+      alert('Thêm phim thành công!');
+    } catch (error) {
+      console.log('Error themPhimUploadHinhAction: ', error);
+    }
+  };
+};
