@@ -1,5 +1,6 @@
 import { quanLyPhimService } from '~/services/QuanLyPhimService';
-import { SET_DANH_SACH_PHIM } from './types/QuanLyPhimType';
+import { SET_DANH_SACH_PHIM, SET_THONG_TIN_PHIM } from './types/QuanLyPhimType';
+import { history } from '~/App';
 // import { SUCCESSFUL_REQUESTS } from '~/variables';
 
 export const layDanhSachPhimAction = (tenPhim = '') => {
@@ -37,6 +38,34 @@ export const themPhimUploadHinhAction = (formData) => {
       alert('Thêm phim thành công!');
     } catch (error) {
       console.log('Error themPhimUploadHinhAction: ', error);
+    }
+  };
+};
+export const layThongTinPhimAction = (maPhim) => {
+  return async (dispatch) => {
+    try {
+      const result = await quanLyPhimService.layThongTinPhim(maPhim);
+      dispatch({
+        type: SET_THONG_TIN_PHIM,
+        payload: result.data.content,
+      });
+      // console.log('result layThongTinPhimAction: ', result);
+    } catch (error) {
+      console.log('error layThongTinPhimAction: ', error);
+    }
+  };
+};
+
+export const capNhatPhimUploadAction = (formData) => {
+  return async (dispatch) => {
+    try {
+      const result = await quanLyPhimService.capNhatPhimUpload(formData);
+      alert('Cập nhật phim thành công!');
+      dispatch(layDanhSachPhimAction());
+      history.push('/admin/films');
+      console.log('result capNhatPhimUploadAction: ', result);
+    } catch (error) {
+      console.log('error capNhatPhimUploadAction: ', error);
     }
   };
 };

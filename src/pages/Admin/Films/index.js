@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { layDanhSachPhimAction, xoaPhimAction } from '~/redux/actions/QuanLyPhimAction';
 import { history } from '~/App';
+import { NavLink } from 'react-router-dom';
 
 const { Search } = Input;
 
@@ -108,9 +109,9 @@ function Films() {
         return (
           <>
             {/* Edit */}
-            <a href="#" key={1} className="mr-2 text-2xl">
+            <NavLink to={`/admin/films/edit/${film.maPhim}`} key={1} className="mr-2 text-2xl">
               <EditOutlined style={{ color: 'green' }} />
-            </a>
+            </NavLink>
             {/* Deleted */}
             <span
               key={2}

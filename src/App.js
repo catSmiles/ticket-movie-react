@@ -18,6 +18,7 @@ import AdminTemplate from './templates/AdminTemplate';
 import Dashboard from './pages/Admin/Dashboard';
 import Films from './pages/Admin/Films';
 import Add from './pages/Admin/Films/Add';
+import Edit from './pages/Admin/Films/Edit';
 
 const history = createBrowserHistory();
 
@@ -42,6 +43,7 @@ function App() {
         <AdminTemplate exact path="/admin" Component={Dashboard} />
         <AdminTemplate exact path="/admin/films" Component={Films} />
         <AdminTemplate exact path="/admin/films/add" Component={Add} />
+        <AdminTemplate exact path="/admin/films/edit/:id" Component={Edit} />
       </Switch>
     </Router>
   );
