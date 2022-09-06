@@ -26,6 +26,11 @@ body {
   color: rgb(89, 89, 89);
 }
 
+button[type='button'] {
+  color: rgb(59 130 246);
+  border-color: rgb(59 130 246);
+}
+
 button,
 input,
 [tabindex] {

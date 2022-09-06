@@ -102,17 +102,22 @@ function AdminTemplate({ Component, ...restProps }) {
                 <Menu.Item key="1" icon={<FileOutlined />}>
                   <NavLink to="/admin">Dashboard</NavLink>
                 </Menu.Item>
-                <SubMenu key="sub1" icon={<FileOutlined />} title="Films">
-                  <Menu.Item key="10" icon={<FileOutlined />}>
+                <SubMenu key="sub-films" icon={<FileOutlined />} title="Films">
+                  <Menu.Item key="sub-films-1" icon={<FileOutlined />}>
                     <NavLink to="/admin/films">Films</NavLink>
                   </Menu.Item>
-                  {/* <Menu.Item key="11" icon={<FileOutlined />}>
-                    <NavLink to="/admin/films/addnew">Add new</NavLink>
-                  </Menu.Item> */}
+                  <Menu.Item key="sub-films-2" icon={<FileOutlined />}>
+                    <NavLink to="/admin/films/add">Add new</NavLink>
+                  </Menu.Item>
                 </SubMenu>
-                {/* <Menu.Item key="3" icon={<DesktopOutlined />}>
-                  <NavLink to="/admin/showtimes">Showtime</NavLink>
-                </Menu.Item> */}
+                <SubMenu key="sub-users" icon={<UserOutlined />} title="Users">
+                  <Menu.Item key="sub-users-show" icon={<UserOutlined />}>
+                    <NavLink to="/admin/users">Users</NavLink>
+                  </Menu.Item>
+                  <Menu.Item key="sub-users-add" icon={<UserOutlined />}>
+                    <NavLink to="/admin/users/add">Add User</NavLink>
+                  </Menu.Item>
+                </SubMenu>
               </Menu>
             </Sider>
             <Layout className="site-layout">

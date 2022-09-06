@@ -125,9 +125,10 @@ function Films() {
             >
               <DeleteOutlined style={{ color: 'red' }} />
             </span>
-            <a key={3} className="text-2xl">
+            {/* Tạo lịch chiếu */}
+            <NavLink to={`/admin/films/showtime/${film.maPhim}`} key={3} className="text-2xl">
               <CalendarOutlined style={{ color: 'blue' }} />
-            </a>
+            </NavLink>
           </>
         );
       },

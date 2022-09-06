@@ -264,7 +264,7 @@ function CheckOut(props) {
                 Phone :
               </i>
               {/* {userLogin.email} */}
-              0345869124
+              {userLogin.soDT}
             </p>
           </div>
           <div

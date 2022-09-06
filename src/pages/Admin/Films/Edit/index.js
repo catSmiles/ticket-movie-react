@@ -12,7 +12,7 @@ function Edit(props) {
   const componentSize = 'default';
   const dispatch = useDispatch();
   const { infoFilm } = useSelector((state) => state.QuanLyPhimReducer);
-  console.log('infoFilm: ', infoFilm);
+  // console.log('infoFilm: ', infoFilm);
 
   const [image, setImage] = useState('');
 
