@@ -3,6 +3,7 @@ import {
   DANG_NHAP_ACTION,
   SET_THONG_TIN_DANH_SACH_NGUOI_DUNG,
   SET_THONG_TIN_NGUOI_DUNG,
+  SET_THONG_TIN_NGUOI_DUNG_TU_DANH_SACH_NGUOI_DUNG,
 } from './types/QuanLyNguoiDungType';
 import { SUCCESSFUL_REQUESTS } from '~/variables';
 import { history } from '~/App';
@@ -93,6 +94,36 @@ export const themNguoiDungAction = (thongTinNguoiDung) => {
       }
     } catch (error) {
       console.log('error them nguoi dung action: ', error);
+    }
+  };
+};
+
+export const layThongTinNguoiDungTuDanhSachNguoiDungAction = (taiKhoan = '') => {
+  return async (dispatch) => {
+    try {
+      const result = await quanLyNguoiDungService.layThongTinNguoiDungTuDanhSachNguoiDung(taiKhoan);
+      if (result.data.statusCode === SUCCESSFUL_REQUESTS) {
+        dispatch({
+          type: SET_THONG_TIN_NGUOI_DUNG_TU_DANH_SACH_NGUOI_DUNG,
+          payload: result.data.content[0],
+        });
+      }
+    } catch (error) {
+      console.log('error lay thong tin nguoi dung tu danh sach nguoi dung: ', error);
+    }
+  };
+};
+
+export const capNhatThongTinNguoiDungAction = (thongTinNguoiDung) => {
+  return async (dispatch) => {
+    try {
+      const result = await quanLyNguoiDungService.capNhatThongTinNguoiDung(thongTinNguoiDung);
+      if (result.data.statusCode === SUCCESSFUL_REQUESTS) {
+        alert('Cập nhật thông tin người dùng thành công');
+        history.push('/admin/users');
+      }
+    } catch (error) {
+      console.log('error cap nhat thong tin nguoi dung action: ', error);
     }
   };
 };

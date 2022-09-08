@@ -3,6 +3,7 @@ import {
   DANG_NHAP_ACTION,
   SET_THONG_TIN_DANH_SACH_NGUOI_DUNG,
   SET_THONG_TIN_NGUOI_DUNG,
+  SET_THONG_TIN_NGUOI_DUNG_TU_DANH_SACH_NGUOI_DUNG,
 } from '../actions/types/QuanLyNguoiDungType';
 
 let user = {};
@@ -15,6 +16,7 @@ const stateDefault = {
   userLogin: user,
   thongTinNguoiDung: {},
   thongTinDanhSachNguoiDung: [],
+  thongTinNguoiDungTuDanhSachNguoiDung: {},
 };
 
 export const QuanLyNguoiDungReducer = (state = stateDefault, action) => {
@@ -31,6 +33,10 @@ export const QuanLyNguoiDungReducer = (state = stateDefault, action) => {
     }
     case SET_THONG_TIN_DANH_SACH_NGUOI_DUNG: {
       state.thongTinDanhSachNguoiDung = action.payload;
+      return { ...state };
+    }
+    case SET_THONG_TIN_NGUOI_DUNG_TU_DANH_SACH_NGUOI_DUNG: {
+      state.thongTinNguoiDungTuDanhSachNguoiDung = action.payload;
       return { ...state };
     }
 

@@ -37,7 +37,7 @@ function Edit(props) {
       danhGia: infoFilm.danhGia,
       hinhAnh: null,
       maNhom: infoFilm.maNhom,
-      statusFilm: 'dangChieu',
+      // statusFilm: 'dangChieu',
     },
     onSubmit: (values) => {
       console.log('values of form: ', values);
@@ -73,7 +73,11 @@ function Edit(props) {
 
   // OK
   const handleChangeDatePicker = (value) => {
-    const ngayKhoiChieu = moment(value).format('DD/MM/YYYY');
+    // console.log('value date: ', value);
+    const ngayKhoiChieu = moment(value);
+    //console.log('result value date formik: ', formik.values.ngayKhoiChieu);
+    console.log('ngayKhoiChieu: ', ngayKhoiChieu);
+
     formik.setFieldValue('ngayKhoiChieu', ngayKhoiChieu);
   };
 
@@ -137,8 +141,9 @@ function Edit(props) {
 
         <Form.Item label="Ngày khởi chiếu">
           <DatePicker
-            format={'DD/MM/YYYY'}
+            format="DD/MM/YYYY"
             onChange={handleChangeDatePicker}
+            // value={moment(formik.values.ngayKhoiChieu)}
             value={moment(formik.values.ngayKhoiChieu)}
           />
         </Form.Item>

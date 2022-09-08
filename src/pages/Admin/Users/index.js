@@ -109,9 +109,9 @@ function Users() {
         return (
           <>
             {/* Edit */}
-            <a href="#" key={1} className="mr-2 text-2xl">
+            <NavLink to={`/admin/users/edit/${user.taiKhoan}`} key={1} className="mr-2 text-2xl">
               <EditOutlined style={{ color: 'green' }} />
-            </a>
+            </NavLink>
             {/* Deleted */}
             <span key={2} className="mr-2 text-2xl cursor-pointer">
               <DeleteOutlined style={{ color: 'red' }} />

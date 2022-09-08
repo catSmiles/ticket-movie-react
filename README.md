@@ -10,3 +10,5 @@
 ## Date: 28-08-2022
 
 1. Tam dừng chức năng đặt vế realtime
+
+##### Vấn đề render dữ liệu bị lịch data - 7/9/2022

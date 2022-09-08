@@ -44,7 +44,7 @@ function CheckOut(props) {
 
     //Load danh sách ghế đang đặt từ server về (lắng nghe tín hiệu từ server trả về)
     connection.on('loadDanhSachGheDaDat', (dsGheKhachDat) => {
-      console.log('loadDanhSachGheDaDat: ', dsGheKhachDat);
+      // console.log('loadDanhSachGheDaDat: ', dsGheKhachDat);
       //Bước 1: Loại mình ra khỏi danh sách
       dsGheKhachDat = dsGheKhachDat.filter((item) => item.taiKhoan !== userLogin.taiKhoan);
       //Bước 2 gộp danh sách ghế khách đặt ở tất cả user thành 1 mảng chung
@@ -54,7 +54,7 @@ function CheckOut(props) {
       }, []);
       //Đưa dữ liệu ghế khách đặt cập nhật redux
       arrGheKhachDat = _.uniqBy(arrGheKhachDat, 'maGhe');
-      console.log('arrGheKhachDat: ', arrGheKhachDat);
+      // console.log('arrGheKhachDat: ', arrGheKhachDat);
 
       //Đưa dữ liệu ghế khách đặt về redux
       dispatch({
@@ -79,8 +79,8 @@ function CheckOut(props) {
 
   const { thongTinPhim, danhSachGhe } = chiTietPhongVe;
 
-  console.log('Danh sach ghe: ', danhSachGhe);
-  console.log('Thong tin phim: ', thongTinPhim);
+  // console.log('Danh sach ghe: ', danhSachGhe);
+  // console.log('Thong tin phim: ', thongTinPhim);
 
   const renderSeats = () => {
     return danhSachGhe.map((ghe, index) => {
@@ -323,7 +323,7 @@ function CheckOutTab(props) {
 function KetQuaDatVe(props) {
   const dispatch = useDispatch();
   const { thongTinNguoiDung } = useSelector((state) => state.QuanLyNguoiDungReducer);
-
+  // console.log('thongTinNguoiDung: ', thongTinNguoiDung);
   // const { userLogin } = useSelector((state) => state.QuanLyNguoiDungReducer);
 
   useEffect(() => {
@@ -332,7 +332,6 @@ function KetQuaDatVe(props) {
   }, []);
 
   const renderTicketItem = function () {
-    console.log('thongTinNguoiDung: ', thongTinNguoiDung);
     return thongTinNguoiDung.thongTinDatVe?.map((ticket, index) => {
       const seats = _.first(ticket.danhSachGhe);
       return (
@@ -376,7 +375,7 @@ function KetQuaDatVe(props) {
                 <span className="font-bold inline-block" style={{ minWidth: '80px' }}>
                   Giờ chiếu:
                 </span>
-                {moment(ticket.ngayDat).format('hh:mm A')}
+                {moment(ticket.ngayDat).format('hh:mm a')}
               </p>
               <p>
                 <span className="font-bold inline-block" style={{ minWidth: '80px' }}>
@@ -434,7 +433,9 @@ function KetQuaDatVe(props) {
           <i className="block">Chúc quý khách xem phim vui vẻ!</i>
         </p>
       </div>
-      <div className="flex flex-wrap -m-2">{renderTicketItem()}</div>
+      <div className="flex flex-wrap -m-2" style={{ minHeight: '200px' }}>
+        {renderTicketItem()}
+      </div>
     </div>
   );
 }

@@ -1,14 +1,34 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Button, Form, Input, Select } from 'antd';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { GROUP_ID } from '~/util/settings/config';
 import { REGEX_PASSWORD, REGEX_PHONE_NUMBER } from '~/variables';
-import { themNguoiDungAction } from '~/redux/actions/QuanLyNguoiDungAction';
+import {
+  layThongTinNguoiDungTuDanhSachNguoiDungAction,
+  capNhatThongTinNguoiDungAction,
+} from '~/redux/actions/QuanLyNguoiDungAction';
+import { useEffect } from 'react';
 
 const { Option } = Select;
 
-function AddUser() {
+function EditUser(props) {
   const [form] = Form.useForm();
+
+  const { thongTinNguoiDungTuDanhSachNguoiDung: userInfo } = useSelector((state) => state.QuanLyNguoiDungReducer);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const { id: taiKhoan } = props.match.params;
+    console.log('taiKhoan: ', taiKhoan);
+    // dispatch action lay thong tin nguoi dung
+    dispatch(layThongTinNguoiDungTuDanhSachNguoiDungAction(taiKhoan));
+  }, []);
+
+  // Update initialValues form when userInfo change
+  useEffect(() => {
+    form.setFieldsValue(userInfo);
+    console.log('userInfo: ', userInfo);
+  }, [form, userInfo]);
 
   // layout form
   const layout = {
@@ -22,10 +42,9 @@ function AddUser() {
 
   // submit form
   const onFinish = (values) => {
-    console.log('data of form: ', values);
     const { xacNhanMatKhau, ...infoUser } = values;
+
     infoUser.maNhom = GROUP_ID;
-    console.log('info user: ', infoUser);
 
     // Che giau thong tin truoc khi gui di - error
     // const formData = new FormData();
@@ -33,43 +52,17 @@ function AddUser() {
     //   formData.append(key, infoUser[key]);
     // }
 
-    // dispatch action add user
-    dispatch(themNguoiDungAction(infoUser));
-
-    // clear form after add user
-    form.resetFields();
+    // dispatch action update info user
+    dispatch(capNhatThongTinNguoiDungAction(infoUser));
   };
-
   return (
     <>
       <h3 className="text-2xl mb-4" style={{ color: '#f1b722' }}>
-        Thêm người dùng
+        Cập nhật thông tin người dùng
       </h3>
-      <Form
-        form={form}
-        {...layout}
-        onFinish={onFinish}
-        name="add-user"
-        initialValues={{
-          taiKhoan: '',
-          matKhau: '',
-          xacNhanMatKhau: '',
-          email: '',
-          soDt: '',
-          maLoaiNguoiDung: '',
-          hoTen: '',
-        }}
-      >
-        <Form.Item
-          label="Tai khoản"
-          name="taiKhoan"
-          rules={[
-            { required: true, message: 'Vui lòng nhập trường này' },
-            { min: 6, message: 'Tài khoản tối thiểu 6 ký tự' },
-            { max: 15, message: 'Tài khoản tối đa 15 ký tự' },
-          ]}
-        >
-          <Input />
+      <Form form={form} {...layout} onFinish={onFinish} name="add-user" initialValues={userInfo}>
+        <Form.Item label="Tai khoản" name="taiKhoan">
+          <Input disabled />
         </Form.Item>
 
         <Form.Item
@@ -160,7 +153,7 @@ function AddUser() {
 
         <Form.Item label="Tác vụ">
           <Button className="text-blue-500 border-blue-500" type="primary" htmlType="submit">
-            Thêm người dùng
+            Cập nhật thông tin người dùng
           </Button>
         </Form.Item>
       </Form>
@@ -168,4 +161,4 @@ function AddUser() {
   );
 }
 
-export default AddUser;
+export default EditUser;
